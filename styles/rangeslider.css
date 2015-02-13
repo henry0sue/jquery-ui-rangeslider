@@ -1,0 +1,62 @@
+.range-slider{
+    height: 0.4em;
+    margin: 0.6em 0.5em;
+    position: relative;
+}
+
+.range-slider div{
+    position: absolute;
+    display: inline-block;
+    background: #ecf0f1;
+    height: 0.4em;
+}
+
+.range-slider .inactive, .range-slider .cap{
+    background: #ecf0f1;
+}
+
+.range-slider .cap{
+    width: 0.25em;
+}
+
+.range-slider .cap.left{
+    left: -0.25em;
+}
+
+.range-slider .cap.right{
+    right: -0.25em;
+}
+
+.range-slider .inactive.left{
+    left:0;
+
+}
+
+.range-slider .inactive.right{
+    background: #ecf0f1;
+    right: 0;
+}
+
+.range-slider .active{
+    background: #0083EB;
+}
+
+.range-slider .thumb{
+    position: absolute;
+    /*border-radius: 50%;*/
+    width: 8px;
+    height: 12px;
+    top: -3px;
+    background-color: #cccccc;
+    border: 1px solid #666;
+    /*background: #2e3935;*/
+
+}
+
+.range-slider .thumb.left{
+    left: 5em;
+}
+
+.range-slider .thumb.right{
+    left: 12em;
+}

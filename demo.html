@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        #range-slider{
+            display: inline-block;
+            width: 50em;
+            height: 1em;
+            margin-left: 2em;
+            margin-bottom: 6px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/rangeslider.css">
+    <title></title>
+</head>
+<body>
+<div id="range-slider"></div>
+<div><span>Left thumb: </span><span id="leftThumbValue"></span></div>
+<div><span>Right thumb: </span><span id="rightThumbValue"></span></div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js"></script>
+<script src="src/jquery.rangeslider.js"></script>
+<script>
+    var rangeSlider = $('#range-slider').rangeSlider({
+        left: 30,
+        right: 60
+    }),
+    leftThumbValue = $('#leftThumbValue'),
+    rightThumbValue = $('#rightThumbValue');
+
+    leftThumbValue.html($('#range-slider').rangeSlider("left"));
+    rightThumbValue.html($('#range-slider').rangeSlider("right"));
+    rangeSlider.bind({
+        leftChanged: function(e){
+            leftThumbValue.html($('#range-slider').rangeSlider("left").toFixed(0));
+        },
+        rightChanged: function(e){
+            rightThumbValue.html($('#range-slider').rangeSlider("right").toFixed(0));
+        }
+    });
+</script>
+</body>
+</html>
